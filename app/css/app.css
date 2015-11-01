@@ -1,0 +1,252 @@
+/* Application CSS Stylesheet */
+
+
+body {
+    margin: 10px 0;
+    background: #f9f9f9 none repeat scroll 0 0;
+    z-index: 1;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+	margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+	width: auto;
+}
+
+.glyphicon-lighter {
+	color: darkgray;
+}
+
+
+#stockwatcher-page-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+#stockwatcher-page-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#logo {
+    background: rgba(0, 0, 0, 0.01) url("images/logo.png") repeat scroll 0 0;
+    display: block;
+    height: 122px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 288px;
+}
+
+span#weiss {
+    background: #f9f9f9 none repeat scroll 0 0;
+    display: block;
+    font-family: helvetica;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 600;
+    height: 122px;
+    left: 110px;
+    line-height: 49px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 13px;
+    width: 460px;
+}
+
+#weiss span {
+    color: #003d52;
+    font-weight: 600;
+}
+
+/**
+ * "Empty" Bootstrap icon (i.e. transparent placeholder).
+ */
+.glyphicon-none:before {
+	content: "\2122";
+	color: transparent !important;
+}
+
+
+
+
+/**
+ * CSS Animations for fading elements in and out.
+ */
+.fade-in,
+.fade-out {
+	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+	   -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+	     -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+	        transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.0s;
+}
+
+ .fade-in.ng-hide-remove,
+.fade-out.ng-hide-add.ng-hide-add-active {
+	opacity: 0;
+	display: block !important;
+}
+
+.fade-out.ng-hide-add,
+ .fade-in.ng-hide-remove.ng-hide-remove-active {
+	opacity: 1;
+	display: block !important;
+}
+
+
+
+/**
+ * CSS Animations for fading Stock List items in and out.
+ */
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+	-webkit-transition: all linear 0.5s;
+	        transition: all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+	opacity: 0;
+	/*max-height:0;*/
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+	opacity: 1;
+	/*max-height:40px;*/
+}
+
+
+
+/**
+ * CSS Animations for fading pages in and out.
+ */
+.at-view-fade-in.ng-enter {
+	-webkit-transition-property: opacity;
+	   -moz-transition-property: opacity;
+	     -o-transition-property: opacity;
+	        transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+	   -moz-transition-duration: 0.5s;
+	     -o-transition-duration: 0.5s;
+	        transition-duration: 0.5s;
+	opacity: 0;
+}
+
+.at-view-fade-in.ng-enter-active {
+	opacity: 1;
+}
+
+.at-view-fade-out.ng-leave {
+	-webkit-transition-property: opacity;
+	   -moz-transition-property: opacity;
+	     -o-transition-property: opacity;
+	        transition-property: opacity;
+	-webkit-transition-duration: 0.5s;
+	   -moz-transition-duration: 0.5s;
+	     -o-transition-duration: 0.5s;
+	        transition-duration: 0.5s;
+	opacity: 1;
+}
+
+.at-view-fade-out.ng-leave-active {
+	opacity: 0;
+}
+
+
+
+
+/**
+ * CSS Animations for Bootstrap Glyphicons.
+ */
+
+/**
+ * Spins the "glyphicon-refresh" icon.
+ *
+ * Example:
+ * <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+ */
+.glyphicon-refresh-animate {
+	-webkit-animation: spin2 1.2s infinite linear;
+	       -animation: spin  1.2s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+	from { -webkit-transform: rotate(  0deg); }
+	to   { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	from { transform: scale(1)   rotate(0deg); }
+	to   { transform: scale(1) rotate(360deg); }
+}
+
+
+
+/**
+ * Bootstrap CSS Modals.
+ */
+#addStockModal .modal-dialog {
+	z-index: 10000;
+}
+
+
+
+/**
+ * Sparkline Line Widget.
+ */
+.sparkline {
+	fill: none;
+	stroke: #000;
+	stroke-width: 0.5px;
+}
+.sparkcircle.neutral {
+	fill: #000;
+	stroke: none;
+}
+.sparkcircle.up {
+	fill: #0f0;
+	stroke: none;
+}
+.sparkcircle.down {
+	fill: #f00;
+	stroke: none;
+}
+
+
+
+/**
+ * Sparkline Bar Widget.
+ */
+.sparkline-bar {
+}
+.sparkline-bar .bar.positive {
+	fill: steelblue; 
+}
+.sparkline-bar .bar.negative {
+	fill: red;
+}
+.sparkline-bar .axis text {
+	font: 9px sans-serif;
+}
+.sparkline-bar .axis path,
+.sparkline-bar .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}

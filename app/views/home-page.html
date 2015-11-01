@@ -1,0 +1,43 @@
+<h1>Home</h1>
+
+<div>
+	Home Page for <em>Velocity Trading</em>
+</div>
+
+<div>
+	<stock-list></stock-list>
+</div>
+
+
+<div class="page-header">
+	<h2>Intraday Charts</h2>
+</div>
+
+<div class="row">
+	<div class="col-sm-6">
+		<stock-chart symbol="SPY"></stock-chart>
+	</div>
+	<div class="col-sm-6">
+		<stock-chart symbol="QQQ"></stock-chart>
+	</div>
+	<div class="col-sm-6">
+		<stock-chart symbol="GLD"></stock-chart>
+	</div>
+	<div class="col-sm-6">
+		<stock-chart symbol="USO"></stock-chart>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-sm-6">
+		<market-chart-widget></market-chart-widget>
+	</div>
+	<div class="col-sm-6">
+		<div class="page-header">
+			<h2>Currencies</h2>
+		</div>
+
+		<currency-chart from-currency="EUR" to-currency="USD"></currency-chart>
+	</div>
+</div>

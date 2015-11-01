@@ -1,0 +1,42 @@
+<!-- Fixed navbar -->
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#/" id="logo">-->
+      <a href="#/" class="navbar-brand">VelocityTrading</a>
+    </a>
+  </div>
+
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li ng-class="{active: controller == 'HomePageController'}"><a href="#/"<span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li ng-class="{active: controller == 'CurrencyPageController'}"><a href="#/currency"><span class="glyphicon glyphicon-euro"></span> Currencies</a></li>
+      <li ng-class="{active: controller == 'HistoryPageController'}"><a href="#/"><span class="glyphicon glyphicon-time"></span> History</a></li>
+      <li ng-class="{active: controller == 'MetricsPageController'}"><a href="#/"><span class="glyphicon glyphicon-stats"></span> Metrics</a></li>
+      <li ng-class="{active: controller == 'AboutPageController'}"><a href="#/about">About</a></li>
+      <li class="dropdown disabled">
+      <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"></a></li>
+        <li><a href="#">Deploy</a></li>
+        <li><a href="#">Backend Metrics</a></li>
+        <li class="divider"></li>
+        <li class="dropdown-header">Administrative</li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Third-party</a></li>
+      </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div><!--/.nav-collapse -->
+</div>
+</nav>

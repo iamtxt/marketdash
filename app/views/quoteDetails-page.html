@@ -1,0 +1,106 @@
+<h1>Quote Details</h1>
+
+<div>
+	Quote Details Page for <em>Velocity Trading</em>
+</div>
+
+<div class="page-header">
+  <h2>{{ stockData.stockSymbol }} ({{ stockData.Name }})</h2>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<h3>General Info</h3>
+		
+		<table class="table table-striped table-condensed">
+			<tbody>
+				<tr>
+          <td><strong>Open:</strong></td>
+					<td class="text-right">{{ stockData.Open | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Previous Close:</strong></td>
+					<td class="text-right">{{ stockData.PreviousClose | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Currency:</strong></td>
+					<td class="text-right">{{ stockData.Currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Bid (Real-time):</strong></td>
+					<td class="text-right">{{ stockData.BidRealTime | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Ask (Real-time):</strong></td>
+					<td class="text-right">{{ stockData.AskRealTime | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>1-Year Target Estimate:</strong></td>
+					<td class="text-right">{{ stockData.OneyrTargetPrice | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Day's Range:</strong></td>
+					<td class="text-right">{{ stockData.DaysLow | currency }} - {{ stockData.DaysHigh | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>52-Week Range:</strong></td>
+					<td class="text-right">{{ stockData.YearLow | currency }} - {{ stockData.YearHigh | currency }}</td>
+				</tr>
+				<tr>
+					<td><strong>Volume:</strong></td>
+					<td class="text-right">{{ stockData.Volume | number }}</td>
+				</tr>
+				<tr>
+					<td><strong>Average Daily Volume:</strong></td>
+					<td class="text-right">{{ stockData.AverageDailyVolume | number }}</td>
+				</tr>
+				<tr>
+					<td><strong>Market Capitalization:</strong></td>
+					<td class="text-right">{{ stockData.MarketCapitalization }}</td>
+				</tr>
+				<tr>
+					<td><strong>Dividend Yield:</strong></td>
+					<td class="text-right">{{ stockData.DividendYield }}</td>
+				</tr>
+				<tr>
+					<td><strong>200MA:</strong></td>
+					<td class="text-right">{{ stockData.TwoHundreddayMovingAverage }}</td>
+				</tr>
+				<tr>
+					<td><strong>EPS (ttm):</strong></td>
+					<td class="text-right">{{ stockData.PriceEPSEstimateCurrentYear }}</td>
+				</tr>
+				<tr>
+					<td><strong>Last Trade Date:</strong></td>
+					<td class="text-right">{{ stockData.LastTradeDate }}</td>
+				</tr>
+				<tr>
+					<td><strong>Ex-Dividend Date:</strong></td>
+					<td class="text-right">{{ stockData.ExDividendDate }}</td>
+				</tr>
+				<tr>
+					<td><strong>Dividend Pay Date:</strong></td>
+					<td class="text-right">{{ stockData.DividendPayDate }}</td>
+				</tr>
+				<tr>
+					<td><strong>Dividend Yield:</strong></td>
+					<td class="text-right">{{ stockData.DividendYield }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="col-sm-12">
+      <stock-dividend-history symbol="{{ $location.path().replace('/quote/', '') }}"></stock-dividend-history> 
+		</div>
+	</div>
+
+
+	<div class="col-sm-8">
+		<stock-chart symbol="{{ $location.path().replace('/quote/', '') }}"></stock-chart>
+
+    <stock-analysts-estimates symbol="{{ $location.path().replace('/quote/', '') }}"></stock-analysts-estimates>
+
+    <stock-news symbol="{{ $location.path().replace('/quote/', '') }}"></stock-news>
+	</div>
+</div>

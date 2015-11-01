@@ -1,0 +1,24 @@
+
+<td class="text-right">{{ quote.index + 1 }}</td>
+<td>{{ quote.liveData.Symbol }}</td>
+<td>{{ quote.liveData.Name }}</td>
+<td class="text-right">{{ quote.liveData.Open | currency }} {{ quote.liveData.Currency }}</td>
+<td class="text-right" ng-class="{ 'text-success': isGain(), 'text-danger': isLoss() }">{{ quote.liveData.Change | currency }}</td>
+<td class="text-right" ng-class="isGain() ? 'text-success' : (isLoss() ? 'text-danger' : '')">{{ quote.liveData.PercentChange | percentage:2 }}</td>
+<td class="text-right">{{ quote.liveData.DividendYield | percentage:2 }}</td>
+<td class="text-right">{{ quote.liveData.PERatio }}</td>
+<td class="text-right">{{ quote.liveData.EarningsShare | number:2 }}</td>
+<td class="col-md-1" style="padding: 0;">
+	<sparkline-bar class="sparkline-bar" min="{{ quote.liveData.YearLow }}" max="{{ quote.liveData.YearHigh }}" current="{{ quote.liveData.Open }}"></sparkline-bar>
+</td>
+
+<!-- <td>{{ quote.liveData.StockExchange }}</td> -->
+<td class="col-md-1" style="padding: 0;">
+	<sparkline class="sparkline" id="{{ 'sparkline' + quote.liveData.Symbol.replace('.', '') }}" symbol="{{ quote.liveData.Symbol }}" exchange="{{ quote.liveData.StockExchange }}" yesterday-close-price="{{ quote.liveData.PreviousClose }}"></sparkline>
+</td>
+<td class="text-center">
+	<a href="#/quote/{{ quote.liveData.Symbol }}" class="btn btn-default btn-xs" role="button" title="See details about {{ quote.liveData.symbol }}">
+		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Details
+	</a>
+</td>
+
